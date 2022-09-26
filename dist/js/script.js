@@ -81,19 +81,19 @@
 
       /* find clickable trigger */
       const clickableTrigger = thisProduct.element.querySelector(select.menuProduct.clickable);
-
       /* start add event listener to clickable trigger on event click */
       clickableTrigger.addEventListener('click', function(event){
         /* prevent default action for event */
         event.preventDefault();
         /* find active product */
-        const activeProducts = document.querySelector(classNames.menuProduct.wrapperActive);
+        const activeProducts = document.querySelector(select.all.menuProductsActive);
+        console.log(activeProducts);
         /* if there is active product and it's not thisProduct.element, remove class active from it */
-        if(((activeProducts != null) && activeProducts.contains('active')) && (activeProducts != thisProduct.element) ){
-          activeProducts.classList.remove('active');
+        if(activeProducts != null  && activeProducts != thisProduct.element){
+          activeProducts.classList.remove(classNames.menuProduct.wrapperActive);
         }
         /* toggle active class on thisProduct.element */
-        thisProduct.element.classList.toggle('active');
+        thisProduct.element.classList.toggle(classNames.menuProduct.wrapperActive);
       });
     }
   }
