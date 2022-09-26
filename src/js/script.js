@@ -87,7 +87,6 @@
         event.preventDefault();
         /* find active product */
         const activeProducts = document.querySelector(select.all.menuProductsActive);
-        console.log(activeProducts);
         /* if there is active product and it's not thisProduct.element, remove class active from it */
         if(activeProducts != null  && activeProducts != thisProduct.element){
           activeProducts.classList.remove(classNames.menuProduct.wrapperActive);
@@ -95,6 +94,7 @@
         /* toggle active class on thisProduct.element */
         thisProduct.element.classList.toggle(classNames.menuProduct.wrapperActive);
       });
+      
     }
   }
 
