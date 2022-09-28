@@ -1,5 +1,4 @@
 /* global Handlebars, utils, dataSource */ // eslint-disable-line no-unused-vars
-
 {
   'use strict';
 
@@ -88,6 +87,7 @@
       thisProduct.formInputs = thisProduct.form.querySelectorAll(select.all.formInputs);
       thisProduct.cartButton = thisProduct.element.querySelector(select.menuProduct.cartButton);
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
+      thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
     }
 
     initAccordion(){
@@ -158,7 +158,19 @@
           } else if(option.default){
             price -= option.price;
           }
-         
+          // find image .paramId-optionId
+          console.log(thisProduct.imageWrapper);
+          const findImage = thisProduct.imageWrapper.querySelector('.' + paramId + '-' + optionId);
+          console.log(findImage);
+          // check it is founded
+          if(findImage){
+            // check it is selected
+            if(formData[paramId].includes(optionId)){
+              findImage.classList.add(classNames.menuProduct.imageVisible);
+            } else {
+              findImage.classList.remove(classNames.menuProduct.imageVisible);
+            }
+          } 
         }
       }
       // update calculated price in the HTML
