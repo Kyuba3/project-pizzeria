@@ -210,10 +210,17 @@
     setValue(value){
       const thisWidget = this;
 
-      const newValue = parseInt(value);
+      let newValue = parseInt(value);
 
       if(thisWidget.value !== newValue  && !isNaN(newValue)){
         thisWidget.value = newValue;
+        
+        if(thisWidget.value < 0){
+          thisWidget.setValue(thisWidget.value + 1);
+        } else if (thisWidget.value > 10){
+          thisWidget.setValue(thisWidget.value - 1);
+        }
+   
       }
       thisWidget.input.value = thisWidget.value;
 
@@ -228,11 +235,13 @@
       
       thisWidget.linkDecrease.addEventListener('click', function(event){
         event.preventDefault();
+        //if >=0 bo nie chcemy byc na minus
         thisWidget.setValue(thisWidget.value - 1);
       });
 
       thisWidget.linkIncrease.addEventListener('click', function(event){
         event.preventDefault();
+        //if 0 bo nie chcemy byc na minus
         thisWidget.setValue(thisWidget.value + 1);
       });
     }
