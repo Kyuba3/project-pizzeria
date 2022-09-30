@@ -223,17 +223,17 @@
       const thisWidget = this;
 
       thisWidget.input.addEventListener('change', function(){
-        thisWidget.setValue(thisWidget.input.value);
+        thisWidget.setValue(thisWidget.value);
       });
       
       thisWidget.linkDecrease.addEventListener('click', function(event){
         event.preventDefault();
-        thisWidget.setValue(thisWidget.input.value - 1);
+        thisWidget.setValue(thisWidget.value - 1);
       });
 
       thisWidget.linkIncrease.addEventListener('click', function(event){
         event.preventDefault();
-        thisWidget.setValue(thisWidget.input.value + 1);
+        thisWidget.setValue(thisWidget.value + 1);
       });
     }
 
