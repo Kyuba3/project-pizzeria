@@ -65,8 +65,6 @@
       thisProduct.initAmountWidget();
       thisProduct.processOrder();
       
-      
-      console.log('new product:', thisProduct);
     }
     renderInMenu(){
       const thisProduct = this;
@@ -177,9 +175,6 @@
           } 
         }
       }
-      console.log(thisProduct);
-      console.log(thisProduct.amountWidget);
-      //console.log(thisProduct.amountWidget.value);
       price *= thisProduct.amountWidget.value;
       // update calculated price in the HTML
       thisProduct.priceElem.innerHTML = price;
@@ -187,8 +182,7 @@
 
     initAmountWidget(){
       const thisProduct = this;
-      console.log('Funkcja initAmountWidget amountWidgetElem');
-      console.log(thisProduct.amountWidgetElem);
+    
       thisProduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem);
 
       thisProduct.amountWidgetElem.addEventListener('updated', function(){
@@ -263,6 +257,14 @@
     }
 
 
+  }
+
+  class Cart{
+
+  }
+
+  class CartProduct{
+    
   }
 
   const app = {
