@@ -42,8 +42,8 @@
   const settings = {
     amountWidget: {
       defaultValue: 1,
-      defaultMin: 1,
-      defaultMax: 9,
+      defaultMin: 0,
+      defaultMax: 10,
     }
   };
 
@@ -65,8 +65,6 @@
       thisProduct.initAmountWidget();
       thisProduct.processOrder();
       
-      
-      console.log('new product:', thisProduct);
     }
     renderInMenu(){
       const thisProduct = this;
@@ -177,9 +175,6 @@
           } 
         }
       }
-      console.log(thisProduct);
-      console.log(thisProduct.amountWidget);
-      //console.log(thisProduct.amountWidget.value);
       price *= thisProduct.amountWidget.value;
       // update calculated price in the HTML
       thisProduct.priceElem.innerHTML = price;
@@ -187,8 +182,7 @@
 
     initAmountWidget(){
       const thisProduct = this;
-      console.log('Funkcja initAmountWidget amountWidgetElem');
-      console.log(thisProduct.amountWidgetElem);
+    
       thisProduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem);
 
       thisProduct.amountWidgetElem.addEventListener('updated', function(){
@@ -224,9 +218,9 @@
         thisWidget.value = newValue;
         
         if(thisWidget.value < 0){
-          thisWidget.setValue(settings.amountWidget.defaultMin - 1);
+          thisWidget.setValue(settings.amountWidget.defaultMin);
         } else if (thisWidget.value > 10){
-          thisWidget.setValue(settings.amountWidget.defaultMax + 1);
+          thisWidget.setValue(settings.amountWidget.defaultMax);
         }
       }
       thisWidget.input.value = thisWidget.value;
