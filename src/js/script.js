@@ -213,14 +213,17 @@
       const thisWidget = this;
 
       let newValue = parseInt(value);
+      const minValue = settings.amountWidget.defaultMin;
+      const maxValue = settings.amountWidget.defaultMax;
+
 
       if(thisWidget.value !== newValue  && !isNaN(newValue)){
         thisWidget.value = newValue;
         
-        if(thisWidget.value < 0){
-          thisWidget.setValue(settings.amountWidget.defaultMin);
-        } else if (thisWidget.value > 10){
-          thisWidget.setValue(settings.amountWidget.defaultMax);
+        if(thisWidget.value < minValue){
+          thisWidget.value = minValue;
+        } else if (thisWidget.value > maxValue){
+          thisWidget.value = maxValue;
         }
       }
       thisWidget.input.value = thisWidget.value;
@@ -260,12 +263,28 @@
   }
 
   class Cart{
+    constructor(element){
+      const thisCart = this;
 
+      thisCart.products = [];
+
+      thisCart.getElements(element);
+
+      console.log('this cart: ', thisCart);
+    }
+
+    getElements(element){
+      const thisCart = this;
+
+      thisCart.dom = {};
+
+      thisCart.dom.wrapper = element;
+    }
   }
 
-  class CartProduct{
-    
-  }
+  //class CartProduct{
+
+  //}
 
   const app = {
     initMenu: function(){
