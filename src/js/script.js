@@ -315,11 +315,8 @@
       thisCart.dom = {};
   
       thisCart.dom.wrapper = element;
-      console.log('element:', element);
-  
-      thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(
-        select.cart.toggleTrigger
-      );
+
+      thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(select.cart.toggleTrigger);
     }
 
     initActions(){
