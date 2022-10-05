@@ -98,6 +98,7 @@
       thisProduct.initOrderForm();
       thisProduct.initAmountWidget();
       thisProduct.processOrder();
+      thisProduct.prepareCartProductParams();
       
     }
     renderInMenu(){
@@ -161,6 +162,7 @@
       thisProduct.cartButton.addEventListener('click', function(event){
         event.preventDefault();
         thisProduct.processOrder();
+        thisProduct.addToCart();
       });
     }
 
@@ -211,6 +213,7 @@
       }
       price *= thisProduct.amountWidget.value;
       // update calculated price in the HTML
+      thisProduct.priceSingle = price;
       thisProduct.priceElem.innerHTML = price;
     }
 
@@ -223,6 +226,62 @@
         thisProduct.processOrder();
       });
     }
+    
+    addToCart(){
+      const thisProduct = this;
+
+      app.cart.add(thisProduct);
+      app.cart.add(thisProduct.prepareCartProduct());
+    }
+
+    prepareCartProduct(){
+      const thisProduct = this;
+
+      const productSummary = {
+        id: thisProduct.id,
+        name: thisProduct.data.name,
+        amount: thisProduct.amountWidget.value,
+        priceSingle: thisProduct.priceSingle, 
+        price: thisProduct.amountWidget.value * thisProduct.priceSingle,
+        params: thisProduct.prepareCartProductParams(),
+      };
+     
+      //const params = {};
+
+      return productSummary;
+      
+    }
+
+    prepareCartProductParams(){
+      const thisProduct = this;
+
+      const formData = utils.serializeFormToObject(thisProduct.form);
+      const params = {};
+      
+      for (let paramId in thisProduct.data.params){
+        const param = thisProduct.data.params[paramId];
+        console.log(param, paramId);
+        
+        params[paramId] = {
+          label: param.label,
+          options: {},
+        };
+
+        for(let optionID in param.options){
+          const option = param.options[optionID];
+          console.log(optionID, option);
+
+          const optionSelected = formData[paramId] && formData[paramId].includes(optionID);
+        
+          if(optionSelected){
+            console.log('option is selceted');
+            params[paramId].options[optionID] = option.label;
+          }
+        }
+      }
+      return params;
+    }
+
   }
 
   class AmountWidget{
@@ -326,6 +385,12 @@
 
         thisCart.dom.wrapper.classList.toggle(classNames.cart.wrapperActive);
       });
+    }
+
+    add(menuProduct){
+      // const thisCart = this;
+
+      console.log('adding produkt: ', menuProduct);
     }
   }
 
