@@ -372,8 +372,6 @@
       
       const thisCart = this;
       
-      thisCart.dom = {};
-
       thisCart.dom = {
         wrapper: element,
         toggleTrigger: element.querySelector(select.cart.toggleTrigger),
@@ -456,7 +454,7 @@
 
       event.dom.wrapper.remove();
       const removeProduct = thisCart.products.indexOf(event);
-      thisCart.products.splice(removeProduct, 1);
+      thisCart.products.splice(removeProduct);
       thisCart.update();
     }
   }
