@@ -94,10 +94,6 @@ class Cart{
     for (let item of thisCart.dom.totalPrice) {
       item.innerHTML = thisCart.totalPrice;
     }
-      
-      
-      
-    console.log(deliveryFee, thisCart.totalPrice);
   }
 
   remove(event){

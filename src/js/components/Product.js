@@ -93,13 +93,10 @@ class Product{
     for(let paramId in thisProduct.data.params){
       // determine param value
       const param = thisProduct.data.params[paramId];
-      console.log(paramId, param);
-      
       // for every option in this catrgory
       for (let optionId in param.options){
         // determine option value
         const option = param.options[optionId];
-        console.log(optionId, option);
 
         if(formData[paramId] && formData[paramId].includes(optionId)){
           if(!option.default){
@@ -109,9 +106,7 @@ class Product{
           price -= option.price;
         }
         // find image .paramId-optionId
-        console.log(thisProduct.imageWrapper);
         const findImage = thisProduct.imageWrapper.querySelector('.' + paramId + '-' + optionId);
-        console.log(findImage);
         // check it is founded
         if(findImage){
           // check it is selected
@@ -178,9 +173,7 @@ class Product{
     const params = {};
       
     for (let paramId in thisProduct.data.params){
-      const param = thisProduct.data.params[paramId];
-      console.log(param, paramId);
-        
+      const param = thisProduct.data.params[paramId];   
       params[paramId] = {
         label: param.label,
         options: {},
@@ -188,8 +181,6 @@ class Product{
 
       for(let optionID in param.options){
         const option = param.options[optionID];
-        console.log(optionID, option);
-
         const optionSelected = formData[paramId] && formData[paramId].includes(optionID);
         
         if(optionSelected){
