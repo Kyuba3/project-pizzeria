@@ -35,9 +35,9 @@ export const select = {
     },
     hourPicker: {
       wrapper: '.hour-picker',
-      input: 'input[type="range"]',
+      input:'input[type="range"]',
       output: '.output',
-    },
+    }
   },
   booking: {
     peopleAmount: '.people-amount',
@@ -78,7 +78,6 @@ export const classNames = {
   cart: {
     wrapperActive: 'active',
   },
-  // CODE ADDED END
   booking: {
     loading: 'loading',
     tableBooked: 'booked',
@@ -89,6 +88,7 @@ export const classNames = {
   pages: {
     active: 'active',
   }
+  // CODE ADDED END
 };
   
 export const settings = {
@@ -111,6 +111,7 @@ export const settings = {
   booking: {
     tableIdAttribute: 'data-table',
   },
+  // CODE ADDED END
   db: {
     url: '//localhost:3131',
     products: 'products',
@@ -121,14 +122,14 @@ export const settings = {
     dateEndParamKey: 'date_lte',
     notRepeatParam: 'repeat=false',
     repeatParam: 'repeat_ne=false',
-  }
+  },
+
 };
   
 export const templates = {
-  bookingWidget: Handlebars.compile(document.querySelector(select.templateOf.bookingWidget).innerHTML),
-  
   menuProduct: Handlebars.compile(document.querySelector(select.templateOf.menuProduct).innerHTML),
   // CODE ADDED START
   cartProduct: Handlebars.compile(document.querySelector(select.templateOf.cartProduct).innerHTML),
-  // CODE ADDED END  
+  // CODE ADDED END
+  bookingWidget: Handlebars.compile(document.querySelector(select.templateOf.bookingWidget).innerHTML),
 };
