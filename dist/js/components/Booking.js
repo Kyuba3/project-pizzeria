@@ -11,41 +11,31 @@ class Booking{
     thisBooking.render(element);
 
     thisBooking.initWidgets();
-
   }
 
   render(element){
     const thisBooking = this;
 
-    const generatedHTML = templates.bookingWidget();
-
     thisBooking.element = element;
-
     thisBooking.dom = {
       wrapper: thisBooking.element,
-      peopleAmount: document.querySelector(select.booking.peopleAmount),
-      hoursAmount: document.querySelector(select.booking.hoursAmount),
     };
 
+    const generatedHTML = templates.bookingWidget();
+
     thisBooking.dom.wrapper.innerHTML = generatedHTML;
+    
+    thisBooking.dom.peopleAmount = thisBooking.element.querySelector(select.booking.peopleAmount);
+    thisBooking.dom.hoursAmount = thisBooking.element.querySelector(select.booking.hoursAmount);
+    
   }
 
   initWidgets(){
     const thisBooking = this;
 
     thisBooking.peopleAmountElem = new AmountWidget(thisBooking.dom.peopleAmount);
-    thisBooking.hoursAmountElem = new AmountWidget(thisBooking.dom.hoursAmount);
-    
-    thisBooking.dom.peopleAmount.addEventListener('click', function(event){
-      event.preventDefault();
-    });
-
-    thisBooking.dom.hoursAmount.addEventListener('click', function(event){
-      event.preventDefault();
-    });
-    
+    thisBooking.hoursAmountElem = new AmountWidget(thisBooking.dom.hoursAmount); 
   }
-
 }
 
 export default Booking;
