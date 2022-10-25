@@ -1,6 +1,9 @@
 import {select, templates} from '../settings.js';
 
 import AmountWidget from '../components/AmountWidget.js';
+import DatePicker from './DatePicker.js';
+import HourPicker from './HourPicker.js';
+import { utils } from '../utils.js';
 
 
 class Booking{
@@ -16,17 +19,23 @@ class Booking{
   render(element){
     const thisBooking = this;
 
-    thisBooking.element = element;
+    const generatedHTML = templates.bookingWidget();
+    thisBooking.element = utils.createDOMFromHTML(generatedHTML);
+
+    const bookingContainer = document.querySelector(select.containerOf.booking);
+    bookingContainer.appendChild(thisBooking.element);
+
+
+
     thisBooking.dom = {
-      wrapper: thisBooking.element,
+      wrapper: element,
+      hoursAmount: element.querySelector(select.booking.hoursAmount),
+      peopleAmount: element.querySelector(select.booking.peopleAmount),
+      dateInput: element.querySelector(select.widgets.datePicker.wrapper),
+      hourInput: element.querySelector(select.widgets.hourPicker.wrapper),
     };
 
-    const generatedHTML = templates.bookingWidget();
 
-    thisBooking.dom.wrapper.innerHTML = generatedHTML;
-    
-    thisBooking.dom.peopleAmount = thisBooking.element.querySelector(select.booking.peopleAmount);
-    thisBooking.dom.hoursAmount = thisBooking.element.querySelector(select.booking.hoursAmount);
     
   }
 
@@ -35,6 +44,9 @@ class Booking{
 
     thisBooking.peopleAmountElem = new AmountWidget(thisBooking.dom.peopleAmount);
     thisBooking.hoursAmountElem = new AmountWidget(thisBooking.dom.hoursAmount); 
+
+    thisBooking.dateInputElem = new DatePicker(thisBooking.dom.dateInput);
+    thisBooking.hourInputElem = new HourPicker(thisBooking.dom.hourInput);
   }
 }
 
