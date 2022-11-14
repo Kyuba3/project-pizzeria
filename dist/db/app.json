@@ -306,68 +306,13 @@
     {
       "date": "2022-11-14",
       "hour": "12:00",
-      "table": null,
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "",
-      "address": "",
-      "id": 4
-    },
-    {
-      "date": "2022-11-14",
-      "hour": "12:00",
-      "table": 1,
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "",
-      "address": "",
-      "id": 5
-    },
-    {
-      "date": "2022-11-14",
-      "hour": "12:00",
       "table": 2,
       "duration": 1,
       "ppl": 1,
       "starters": [],
       "phone": "",
       "address": "",
-      "id": 6
-    },
-    {
-      "date": "2022-11-14",
-      "hour": "16:00",
-      "table": 1,
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "",
-      "address": "",
-      "id": 7
-    },
-    {
-      "date": "2022-11-25",
-      "hour": "12:00",
-      "table": 1,
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "",
-      "address": "",
-      "id": 8
-    },
-    {
-      "date": "2022-11-14",
-      "hour": "14:30",
-      "table": 1,
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "",
-      "address": "",
-      "id": 9
+      "id": 4
     }
   ]
 }

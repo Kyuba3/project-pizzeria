@@ -151,19 +151,19 @@ class Booking {
   initTables(i) {
     const thisBooking = this;
 
-    if (e.target.classList.contains('table')){
+    if (i.target.classList.contains('table')){
 
-      if (!e.target.classList.contains(classNames.booking.tableBooked)){
+      if (!i.target.classList.contains(classNames.booking.tableBooked)){
         for (let table of thisBooking.dom.tables) {
-          if (table.classList.contains(classNames.booking.selected) && table !== e.target)
+          if (table.classList.contains(classNames.booking.selected) && table !== i.target)
             table.classList.remove(classNames.booking.selected);
         }
-        if (e.target.classList.contains(classNames.booking.selected)){
-          e.target.classList.remove(classNames.booking.selected);
+        if (i.target.classList.contains(classNames.booking.selected)){
+          i.target.classList.remove(classNames.booking.selected);
           thisBooking.selectTableId = null;
         } else {
-          e.target.classList.add(classNames.booking.selected);
-          thisBooking.selectTableId = parseInt(e.target.getAttribute(settings.booking.tableIdAttribute));
+          i.target.classList.add(classNames.booking.selected);
+          thisBooking.selectTableId = parseInt(i.target.getAttribute(settings.booking.tableIdAttribute));
         }
       } else {
         alert('This table is already booked.');
@@ -196,11 +196,11 @@ class Booking {
     thisBooking.hourPicker = new HourPicker(thisBooking.dom.hourPicker);
     thisBooking.datePicker = new DatePicker(thisBooking.dom.datePicker);
 
-    thisBooking.dom.wrapper.addEventListener('updated', function() {
+    thisBooking.dom.wrapper.addEventListener('updated', function(){
       thisBooking.updateDOM();
     });
 
-    thisBooking.dom.floorPlan.addEventListener('click', function(e) {
+    thisBooking.dom.floorPlan.addEventListener('click', function(i){
       thisBooking.initTables(i);
     });
   }
