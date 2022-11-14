@@ -59,7 +59,7 @@ const app = {
     }
   },
 
-  initMenu: function(){
+  initMenu: function () {
     const thisApp = this;
     for (let productData in thisApp.data.products) {
       new Product(
@@ -69,7 +69,7 @@ const app = {
     }
   },
 
-  initData: function(){
+  initData: function () {
     const thisApp = this;
     thisApp.data = {};
     const url = `${settings.db.url}/${settings.db.products}`;
@@ -84,7 +84,7 @@ const app = {
       });
   },
 
-  initCart: function(){
+  initCart: function () {
     const thisApp = this;
 
     const cartElem = document.querySelector(select.containerOf.cart);
@@ -96,7 +96,7 @@ const app = {
     });
   },
 
-  initBooking: function(){
+  initBooking: function () {
     const thisApp = this;
     const bookingWidget = document.querySelector(select.containerOf.booking);
     thisApp.booking = new Booking(bookingWidget);
@@ -104,9 +104,8 @@ const app = {
 
   initHome: function(){
     const thisApp = this;
-
-    const homeElem = document.querySelector(select.containerOf.home);
-    thisApp.home = new Home(homeElem);
+    const homeSub = document.querySelector(select.containerOf.home);
+    thisApp.home = new Home(homeSub);
   },
 
   init: function () {

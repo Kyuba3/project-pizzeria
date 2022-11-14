@@ -50,6 +50,7 @@
     },
     "dependencies": {
         "flickity": "^3.0.0",
-        "json-server": "^0.17.0"
+        "json-server": "^0.17.0",
+        "node-sass": "^8.0.0"
     }
 }
