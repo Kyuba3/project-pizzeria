@@ -202,31 +202,11 @@
       }
     }
   ],
-  "orders": [
-    {
-      "address": "",
-      "phone": "",
-      "totalPrice": 29,
-      "subtotalPrice": 9,
-      "totalNumber": 1,
-      "deliveryFee": 20,
-      "products": [
-        {
-          "id": "cake",
-          "amount": 1,
-          "price": 9,
-          "priceSingle": 9,
-          "name": "Zio Stefano's Doughnut",
-          "params": {}
-        }
-      ],
-      "id": 1
-    }
-  ],
+  "orders": [],
   "events": [
     {
       "id": 1,
-      "date": "2022-09-29",
+      "date": "2022-09-28",
       "hour": "12:30",
       "table": 1,
       "repeat": false,
@@ -236,7 +216,7 @@
     },
     {
       "id": 2,
-      "date": "2022-09-29",
+      "date": "2022-09-28",
       "hour": "16:00",
       "table": 3,
       "repeat": "daily",
@@ -249,7 +229,7 @@
     },
     {
       "id": 3,
-      "date": "2022-09-29",
+      "date": "2022-09-28",
       "hour": "12:00",
       "table": 3,
       "repeat": "daily",
@@ -262,7 +242,7 @@
     },
     {
       "id": 4,
-      "date": "2022-09-29",
+      "date": "2022-09-28",
       "hour": "13:00",
       "table": 2,
       "repeat": "daily",
@@ -272,7 +252,7 @@
     },
     {
       "id": 5,
-      "date": "2022-09-29",
+      "date": "2022-09-28",
       "hour": "18:00",
       "table": 2,
       "repeat": "daily",
@@ -283,5 +263,111 @@
       ]
     }
   ],
-  "bookings": []
+  "bookings": [
+    {
+      "id": 2,
+      "date": "2022-09-28",
+      "hour": "17:00",
+      "table": 3,
+      "repeat": "daily",
+      "duration": 2,
+      "ppl": 3,
+      "starters": [
+        "bread",
+        "lemonWater"
+      ]
+    },
+    {
+      "id": 3,
+      "date": "2022-09-28",
+      "hour": "20:00",
+      "table": 3,
+      "repeat": "daily",
+      "duration": 2,
+      "ppl": 3,
+      "starters": [
+        "bread",
+        "lemonWater"
+      ]
+    },
+    {
+      "id": 1,
+      "date": "2022-09-28",
+      "hour": "16:00",
+      "table": 3,
+      "repeat": "daily",
+      "duration": 2,
+      "ppl": 3,
+      "starters": [
+        "bread",
+        "lemonWater"
+      ]
+    },
+    {
+      "date": "2022-11-14",
+      "hour": "12:00",
+      "table": null,
+      "duration": 1,
+      "ppl": 1,
+      "starters": [],
+      "phone": "",
+      "address": "",
+      "id": 4
+    },
+    {
+      "date": "2022-11-14",
+      "hour": "12:00",
+      "table": 1,
+      "duration": 1,
+      "ppl": 1,
+      "starters": [],
+      "phone": "",
+      "address": "",
+      "id": 5
+    },
+    {
+      "date": "2022-11-14",
+      "hour": "12:00",
+      "table": 2,
+      "duration": 1,
+      "ppl": 1,
+      "starters": [],
+      "phone": "",
+      "address": "",
+      "id": 6
+    },
+    {
+      "date": "2022-11-14",
+      "hour": "16:00",
+      "table": 1,
+      "duration": 1,
+      "ppl": 1,
+      "starters": [],
+      "phone": "",
+      "address": "",
+      "id": 7
+    },
+    {
+      "date": "2022-11-25",
+      "hour": "12:00",
+      "table": 1,
+      "duration": 1,
+      "ppl": 1,
+      "starters": [],
+      "phone": "",
+      "address": "",
+      "id": 8
+    },
+    {
+      "date": "2022-11-14",
+      "hour": "14:30",
+      "table": 1,
+      "duration": 1,
+      "ppl": 1,
+      "starters": [],
+      "phone": "",
+      "address": "",
+      "id": 9
+    }
+  ]
 }
